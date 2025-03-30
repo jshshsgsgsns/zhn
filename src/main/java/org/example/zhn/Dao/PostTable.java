@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,7 +17,7 @@ public class PostTable {
     private String label;
     private int view;
     private int likes;
-    private String image;
+    private List<String> image;
     private String content;
     private String createTime;
     private int permissions;

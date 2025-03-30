@@ -34,4 +34,12 @@ public class postTests {
     void deletePost(){
         System.out.println(mapper.deletePost(1));
     }
+
+    @Test
+    void likes(){
+        for(int i=0;i<10;i++){
+            System.out.println(mapper.likesPost(1));
+        }
+    }
+
 }

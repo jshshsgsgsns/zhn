@@ -1,9 +1,6 @@
 package org.example.zhn.Mapper;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.example.zhn.Dao.PostTable;
 
 import java.util.List;
@@ -26,6 +23,8 @@ public interface postMapper {
     boolean deletePost(int userid);
 //    删除帖子
 
+    @Update("update posttable set likes = likes + 1 where id")
+    boolean likesPost(int id);
 
 
 }

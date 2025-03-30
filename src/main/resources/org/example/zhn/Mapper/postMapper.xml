@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.example.zhn.Mapper.postMapper">
     <insert id="insertPost" parameterType="org.example.zhn.Dao.PostTable">
-        insert into posttable(userid, title, section, label, view, likes, image, content, createtime)
+        insert into posttable(userid, title, section, label, view, likes,  content, createtime)
             value (#{userid}, #{title}, #{section}, #{label}, #{view}, #{likes},
-                   #{likes}, #{image}, #{createTime})
+                   #{likes}, #{createTime})
     </insert>
 
     <update id="updatePost" parameterType="org.example.zhn.Dao.PostTable">
@@ -17,7 +17,6 @@
         <if test="label != null">label  = #{label}</if>
         <if test="view != null">view  = #{view}</if>
         <if test="likes != null">likese  = #{likes}</if>
-        <if test="image != null">image  = #{image}</if>
         <if test="content != null">content  = #{content}</if>
         <if test="createTime != null">createTime  = #{createTime}</if>
         <where>
