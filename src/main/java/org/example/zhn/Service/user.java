@@ -2,17 +2,14 @@ package org.example.zhn.Service;
 
 import org.example.zhn.Dao.User;
 import org.example.zhn.Mapper.userMapper;
-import org.example.zhn.ServiceImpl.userImpl;
+import org.example.zhn.ServiceImpl.UserImpl;
 import org.example.zhn.Utils.BCryptPassword;
 import org.example.zhn.Utils.RandomStringGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
-
 @Service
-public class user implements userImpl {
+public class user implements UserImpl {
 
     @Autowired
     private userMapper mapper;
@@ -58,5 +55,18 @@ public class user implements userImpl {
         return invitation;
     }
 
+    @Override
+    public boolean updatePassword(String email, String password) {
+        return false;
+    }
 
+    @Override
+    public boolean updateAvatar(String email, String avatar) {
+        return false;
+    }
+
+    @Override
+    public boolean updateTitle(String email, String title) {
+        return false;
+    }
 }

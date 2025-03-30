@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.zhn.Mapper.postMapper">
+    <insert id="insertPost" parameterType="org.example.zhn.Dao.PostTable">
+        insert into posttable(userid, title, section, label, view, likes, image, content, createtime)
+            value (#{userid}, #{title}, #{section}, #{label}, #{view}, #{likes},
+                   #{likes}, #{image}, #{createTime})
+    </insert>
+
+    <update id="updatePost" parameterType="org.example.zhn.Dao.PostTable">
+        update posttable <set>
+        <if test="userid != null">userid  = #{userid}</if>
+        <if test="title != null">title  = #{title}</if>
+        <if test="section != null">section  = #{section}</if>
+        <if test="label != null">label  = #{label}</if>
+        <if test="view != null">view  = #{view}</if>
+        <if test="likes != null">likese  = #{likes}</if>
+        <if test="image != null">image  = #{image}</if>
+        <if test="content != null">content  = #{content}</if>
+        <if test="createTime != null">createTime  = #{createTime}</if>
+        <where>
+            userid = #{userid}
+        </where>
+    </set>
+    </update>
+    <select id="selectPost" resultType="org.example.zhn.Dao.PostTable">
+        select * from posttable
+        <where>
+            <if test="section != 0">
+                section = #{section}
+            </if>
+            <if test="userid != null">
+                userid = #{userid}
+            </if>
+        </where>
+        <if test="pages != null">
+            limit 10 offset #{pages}
+        </if>
+    </select>
+
+</mapper>

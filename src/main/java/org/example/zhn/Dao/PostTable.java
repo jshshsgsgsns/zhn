@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class posttable {
+public class PostTable {
     private int id;
     private String title;
     private int section;
@@ -17,7 +17,7 @@ public class posttable {
     private int likes;
     private String image;
     private String content;
-    private String createtime;
-
+    private String createTime;
+    private int permissions;
 
 }

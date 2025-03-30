@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class section {
-    private int id;
-    private String content;
+public class Concern {
+    private int user_id;
+    private int section_id;
 }

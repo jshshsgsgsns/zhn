@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.zhn.Mapper.userMapper">
+
+    <update id="updateUser" parameterType="org.example.zhn.Dao.User">
+        update user
+        <set>
+            <if test="username != null">username = #{name} ,</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="avatar_url != null">avatar_url = #{avatar_url},</if>
+            <if test="Invitation != null">Invitation = #{Invitation},</if>
+            <if test="whether != null">whether = #{whether},</if>
+            <if test="title != null">title = #{title},</if>
+            <if test="manage != null">manage = #{manage}</if>
+        </set>
+        <where>
+            email = #{email}
+        </where>
+
+    </update>
+
+</mapper>

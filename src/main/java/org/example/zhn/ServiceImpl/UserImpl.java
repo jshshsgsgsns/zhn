@@ -2,7 +2,7 @@ package org.example.zhn.ServiceImpl;
 
 import org.example.zhn.Dao.User;
 
-public interface userImpl {
+public interface UserImpl {
 
     boolean regularUser_insert(User user);
 //    普通用户注册
@@ -21,4 +21,11 @@ public interface userImpl {
 
     boolean verifyUser(String email, String password);
 //    获取邀请码列表，用来查询邀请码是否存在
+
+    boolean updateAvatar(String email, String avatar);
+//    修改头像
+
+    boolean updatePassword(String email, String password);
+//    修改密码
+    boolean updateTitle(String email, String title);
 }

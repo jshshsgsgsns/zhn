@@ -36,20 +36,10 @@ public interface userMapper {
 
     @Select("select password from user where email = #{email}")
     String findUserByEmail(String email);
+//根据邮箱查询密码，和前端返回的密码进行加密
 
-//    @Select("select invitation from user")
-//    List<String> verifyInvitations(String invitation);
-////    获取验证码列表
+    boolean updateUser(User user);
 
-    @Update("update user set password = #{password} where email = #{email} ")
-    Boolean updatePassword(String email,String password);
-//    重置密码
 
-    @Update("update user set avatar_url = #{avatar} where email = #{email} ")
-    boolean updateAvatar(String email, String avatar);
-//    更换头像
-
-    @Update("update user set title = #{title} where email = #{email}")
-    boolean updateTitle(String title);
-//    更换个人说明
+//
 }
